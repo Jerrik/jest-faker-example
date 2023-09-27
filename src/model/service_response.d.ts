@@ -1,0 +1,3 @@
+interface DServiceResponse {
+	error?: unknown;
+}

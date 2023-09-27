@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="PIMS" tests="1" failures="0" errors="0" time="0.653">
+  <testsuite name="src/libs/logger.test.ts" errors="0" failures="0" skipped="0" timestamp="2023-09-27T20:24:56" time="0.193" tests="1">
+    <testcase classname="Libs - Logger Formats deep obj" name="Libs - Logger › Formats deep obj" time="0.002">
+    </testcase>
+  </testsuite>
+</testsuites>
