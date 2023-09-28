@@ -1,7 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuites name="PIMS" tests="1" failures="0" errors="0" time="0.653">
-  <testsuite name="src/libs/logger.test.ts" errors="0" failures="0" skipped="0" timestamp="2023-09-27T20:24:56" time="0.193" tests="1">
-    <testcase classname="Libs - Logger Formats deep obj" name="Libs - Logger › Formats deep obj" time="0.002">
+<testsuites name="PIMS" tests="9" failures="0" errors="0" time="0.82">
+  <testsuite name="src/helpers/helper.test.ts" errors="0" failures="0" skipped="0" timestamp="2023-09-28T14:56:12" time="0.501" tests="6">
+    <testcase classname="Helpers › Test createTimeWindow Generates a time window based on given dateime " name="Helpers › Test createTimeWindow › Generates a time window based on given dateime " time="0.001">
+    </testcase>
+    <testcase classname="Helpers › Test calculateBearingAngle  Returns a bearing angle based from point A to point B" name="Helpers › Test calculateBearingAngle  › Returns a bearing angle based from point A to point B" time="0">
+    </testcase>
+    <testcase classname="Helpers › Calculate RPM  Calculates RPM" name="Helpers › Calculate RPM  › Calculates RPM" time="0">
+    </testcase>
+    <testcase classname="Helpers › Calculate RPM  Handles bad data" name="Helpers › Calculate RPM  › Handles bad data" time="0">
+    </testcase>
+    <testcase classname="Helpers › generatePickupDates  Generate Dates" name="Helpers › generatePickupDates  › Generate Dates" time="0.001">
+    </testcase>
+    <testcase classname="Helpers › generatePickupDates  Generate empty Dates" name="Helpers › generatePickupDates  › Generate empty Dates" time="0">
+    </testcase>
+  </testsuite>
+  <testsuite name="src/helpers/trackSearchResults.test.ts" errors="0" failures="0" skipped="0" timestamp="2023-09-28T14:56:13" time="0.13" tests="2">
+    <testcase classname="Track Search Results Difference" name="Track Search Results › Difference" time="0.001">
+    </testcase>
+    <testcase classname="Track Search Results No Difference" name="Track Search Results › No Difference" time="0">
+    </testcase>
+  </testsuite>
+  <testsuite name="src/libs/logger.test.ts" errors="0" failures="0" skipped="0" timestamp="2023-09-28T14:56:13" time="0.099" tests="1">
+    <testcase classname="Libs - Logger Formats deep obj" name="Libs - Logger › Formats deep obj" time="0.001">
     </testcase>
   </testsuite>
 </testsuites>

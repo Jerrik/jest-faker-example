@@ -1,5 +1,4 @@
 import { getFormattedLocation, log as logger } from '../libs/logger';
-import { s3Client } from '../libs/s3Client';
 
 const log = logger.child({
 	name: getFormattedLocation(__filename)
@@ -9,7 +8,7 @@ const BUCKET_NAME = `${process.env.HISTORY_BUCKET_PREFIX}-${process.env.PROVIDER
 
 const trackSearchResult = async (connectionId: string, newLoads: string[]) => {
 	try {
-		const history = (await fetchData(connectionId)) ?? {};
+		const history = [];
 		log.debug(`Fetched HISTORY: ${history.length ?? 'x'}`);
 		const delta = (await extractDelta(history, newLoads)) ?? [];
 		log.debug(`Calculated DELTA: ${delta.length ?? 'x'}`);
@@ -44,9 +43,7 @@ const fetchData = async (connectionId: string) => {
 	};
 
 	try {
-		const file = await s3Client.getObject(params).promise();
-		const history = JSON.parse(file.Body?.toString('utf-8') ?? '{}');
-
+		const history = ['historic data']
 		return history;
 	} catch (error) {
 		log.error(error, 'Failed to fetch historic data');
@@ -67,31 +64,6 @@ export const updateData = async (connectionId: string, newLoads: string[], delta
 		ContentType: 'application/json',
 		Body: Buffer.from(JSON.stringify(delta))
 	};
-
-	await Promise.all([
-		await s3Client
-			.upload(paramsHistory, (error, response) => {
-				if (response) {
-					log.info(response, 'Historic data success');
-				}
-
-				if (error) {
-					log.error(error, 'Failed to update historic data');
-				}
-			})
-			.promise(),
-		await s3Client
-			.upload(paramsDelta, (error, response) => {
-				if (response) {
-					log.info(response, 'Historic data success');
-				}
-
-				if (error) {
-					log.error(error, 'Failed to update delta data');
-				}
-			})
-			.promise()
-	]);
 };
 
 export default trackSearchResult;
