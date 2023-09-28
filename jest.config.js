@@ -45,8 +45,8 @@ module.exports = {
 		[
 			'jest-junit',
 			{
-				suiteName: 'PIMS',
-				uniqueOutputName: 'PIMS',
+				suiteName: 'CUSTOM',
+				uniqueOutputName: 'CUSTOM',
 				ancestorSeparator: ' › ',
 				usePathForSuiteName: true,
 				titleTemplate: '{classname} › {title}',

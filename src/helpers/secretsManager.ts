@@ -51,7 +51,7 @@ export const getSecret = async (secretName) => {
 export const encrypt = async (source: string) => {
 	try {
 		const params = {
-			KeyId: 'alias/pims-refreshToken',
+			KeyId: 'alias/custom-refreshToken',
 			Plaintext: source
 		};
 
