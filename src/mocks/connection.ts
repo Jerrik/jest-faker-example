@@ -1,6 +1,6 @@
 import { faker } from '@faker-js/faker';
 import { v4 as uuidv4 } from 'uuid';
-import { IConnection } from '../providers/loadboards/CommonTypes';
+import { IConnection } from '../CommonTypes';
 
 export const generateConnection = (howMany = 1) => {
 	const connectionsArr: IConnection[] = [];

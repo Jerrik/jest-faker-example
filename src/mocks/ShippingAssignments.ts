@@ -1,9 +1,9 @@
 import { faker } from '@faker-js/faker';
-import { IAssignment, loadTypes, stopTypes } from '../providers/loadboards/CommonTypes';
+import { IAssignment, loadTypes, stopTypes } from '../CommonTypes';
 export const generateAssignments = (howMany, orderId = faker.datatype.uuid()) => {
 	const assignmentsArr: IAssignment[] = [];
 	for (let i = 1; i <= howMany; i++) {
-		const stopType: stopTypes = () => {
+		const stopType = () => {
 			let type: stopTypes = 'ST';
 			if (i == 1) {
 				type = 'OR';

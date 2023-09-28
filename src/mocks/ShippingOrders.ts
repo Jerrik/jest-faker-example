@@ -1,5 +1,5 @@
 import { faker } from '@faker-js/faker';
-import { IOrder, modeType, trailerTypes } from '../providers/loadboards/CommonTypes';
+import { IOrder, modeType, trailerTypes } from '../CommonTypes';
 
 export const generateOrders = (howMany) => {
 	const ordersArr: IOrder[] = [];

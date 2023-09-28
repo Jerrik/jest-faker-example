@@ -1,9 +1,3 @@
-import { getFormattedLocation, log as logger } from '../libs/logger';
-
-const log = logger.child({
-	name: getFormattedLocation(__filename)
-});
-
 const toRadians = (degrees: number) => {
 	return (degrees * Math.PI) / 180;
 };
@@ -26,6 +20,6 @@ export const calculateBearingAngle = (startLat: number, startLng: number, destLa
 		brng = toDegrees(brng);
 		return (brng + 360) % 360;
 	} catch (err) {
-		log.error('Bearing Angle calculation Failed');
+		console.error('Bearing Angle calculation Failed');
 	}
 };
